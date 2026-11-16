@@ -1,40 +1,43 @@
-# Kyuubi / Omarchy 4 Quickshell surfaces. Colors only; no layout changes.
+# Kyuubi / Omarchy 4 Quickshell surfaces.
+# Warm seal-black chrome, chakra-orange focus, crimson selection, ember-gold hover.
+# Slightly see-through bar/launcher/lock so the fox art can show through.
+
 [bar]
-background = "#09070c"
-background-alpha = 1.0
-text = "#f6e8d7"
-active = "#ff5a24"
+background = "#100807"
+background-alpha = 0.82
+text = "#FFE8C8"
+active = "#F26B1D"
 scale-with-font = true
 size-horizontal = 26
 size-vertical = 28
 
 [hyprland]
-active-border = "rgba(ff5a24ee) rgba(ff354aee) 45deg"
-active-border-foreground = "#fff3e5"
+active-border = "rgba(f26b1dee) rgba(c41e3aee) rgba(f0b429ee) 45deg"
+active-border-foreground = "#FFF3E0"
 
 [controls]
-normal-color = "#f6e8d7"
-normal-fill-alpha = 0.04
-normal-border = "#d4bac0"
+normal-color = "#FFE8C8"
+normal-fill-alpha = 0.05
+normal-border = "#A65B32"
 normal-border-width = 1
-normal-border-alpha = 0.4
-hover-cursor-color = "#fff3e5"
-hover-cursor-fill-alpha = 0.08
-hover-cursor-border = "#ff354a"
+normal-border-alpha = 0.45
+hover-cursor-color = "#FFF3E0"
+hover-cursor-fill-alpha = 0.10
+hover-cursor-border = "#F0B429"
 hover-cursor-border-width = 1
-hover-cursor-border-alpha = 0.55
-focus-color = "#fff3e5"
-focus-fill-alpha = 0.08
-focus-border = "#ff5a24"
+hover-cursor-border-alpha = 0.75
+focus-color = "#FFF3E0"
+focus-fill-alpha = 0.10
+focus-border = "#F26B1D"
 focus-border-width = 1
-focus-border-alpha = 0.8
-selected-color = "#ff354a"
-selected-fill-alpha = 0.18
-selected-border = "#ff5a24"
-selected-border-width = 0
-selected-border-alpha = 1.0
-pressed-fill-alpha = 0.22
-selection-fill-alpha = 0.35
+focus-border-alpha = 0.9
+selected-color = "#FFF3E0"
+selected-fill-alpha = 0.22
+selected-border = "#C41E3A"
+selected-border-width = 1
+selected-border-alpha = 0.95
+pressed-fill-alpha = 0.28
+selection-fill-alpha = 0.40
 
 [spacing]
 scale = 1.0
@@ -44,83 +47,84 @@ scale-with-font = true
 base-size = 12
 
 [popups]
-background = "#0e0b10"
-background-alpha = 1.0
-text = "#f6e8d7"
+background = "#160C0B"
+background-alpha = 0.92
+text = "#FFE8C8"
 border = "hyprland.active-border"
-border-alpha = 0.85
+border-alpha = 0.95
 
 [tooltip]
-background = "#22141c"
-background-alpha = 0.97
-text = "#f6e8d7"
-border = "#b16b57"
-border-alpha = 1.0
+background = "#2A1610"
+background-alpha = 0.96
+text = "#FFE8C8"
+border = "#F0B429"
+border-alpha = 0.9
 
 [notifications]
-background = "#0e0b10"
-background-alpha = 1.0
-text = "#f6e8d7"
+background = "#160C0B"
+background-alpha = 0.92
+text = "#FFE8C8"
 border = "hyprland.active-border"
-border-alpha = 0.85
-countdown = "#ff354a"
+border-alpha = 0.95
+countdown = "#C41E3A"
 
 [launcher]
-background = "#0e0b10"
-background-alpha = 0.97
-text = "#f6e8d7"
-border = "#b16b57"
-border-alpha = 0.85
-scrim = "#050408"
-scrim-alpha = 0.6
-selected-background = "#482024"
+background = "#160C0B"
+background-alpha = 0.88
+text = "#FFE8C8"
+border = "hyprland.active-border"
+border-alpha = 0.9
+scrim = "#0A0605"
+scrim-alpha = 0.5
+selected-background = "#5A1E14"
 selected-background-alpha = 1.0
-selected-text = "#fff3e5"
-selected-border = "#ff5a24"
-selected-border-alpha = 0.8
+selected-text = "#FFF3E0"
+selected-border = "#F26B1D"
+selected-border-alpha = 0.95
 
 [menu]
-background = "#0e0b10"
-background-alpha = 1.0
-text = "#f6e8d7"
-border = "#b16b57"
-border-alpha = 0.85
-scrim = "#050408"
-scrim-alpha = 0.5
-selected-background = "#482024"
+background = "#160C0B"
+background-alpha = 0.90
+text = "#FFE8C8"
+border = "hyprland.active-border"
+border-alpha = 0.9
+scrim = "#0A0605"
+scrim-alpha = 0.45
+selected-background = "#5A1E14"
 selected-background-alpha = 1.0
-selected-text = "#fff3e5"
-selected-border = "#ff5a24"
-selected-border-alpha = 0.8
+selected-text = "#FFF3E0"
+selected-border = "#F26B1D"
+selected-border-alpha = 0.95
 
 [polkit]
-background = "#0e0b10"
-background-alpha = 1.0
-text = "#f6e8d7"
-text-error = "#ff6973"
+background = "#160C0B"
+background-alpha = 0.94
+text = "#FFE8C8"
+text-error = "#FF3B4E"
 border = "hyprland.active-border"
-border-error = "#ee334b"
+border-error = "#C41E3A"
 border-alpha = 1.0
-scrim = "#050408"
-scrim-alpha = 0.6
-accent = "#ff354a"
+scrim = "#0A0605"
+scrim-alpha = 0.55
+accent = "#F26B1D"
 
 [lock]
-background = "#09070c"
-background-alpha = 0.92
-text = "#f6e8d7"
-placeholder = "#a28d91"
-text-error = "#ff6973"
-border = "#b16b57"
+# Centered password field reads as a fire-seal tablet on the blurred wallpaper.
+background = "#100807"
+background-alpha = 0.78
+text = "#FFE8C8"
+placeholder = "#A07A62"
+text-error = "#FF3B4E"
+border = "#A65B32"
 border-active = "hyprland.active-border"
-border-error = "#ee334b"
+border-error = "#C41E3A"
 border-alpha = 1.0
-selection = "#ff5a24"
-selection-alpha = 0.45
+selection = "#F26B1D"
+selection-alpha = 0.5
 
 [image-picker]
-text = "#f6e8d7"
-selected-border = "#ff354a"
+text = "#FFE8C8"
+selected-border = "#F26B1D"
 selected-border-alpha = 1.0
-unselected-border = "#d4bac0"
+unselected-border = "#A07A62"
 unselected-border-alpha = 0.28
