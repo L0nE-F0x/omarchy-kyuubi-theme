@@ -1,36 +1,33 @@
-# Kyuubi About branding (optional)
+# Kyuubi About Branding (Optional)
 
-Omarchy's About screen reads a **user-level** file:
+Omarchy's About screen reads a user-level logo at `~/.config/omarchy/branding/about.txt`
+and optional user fastfetch config at `~/.config/fastfetch/config.jsonc`.
 
-`~/.config/omarchy/branding/about.txt`
+## Included Marks (54x26 Quadrant-Block Art)
 
-That path is not per-theme. Nothing here is applied automatically when you
-switch to Kyuubi.
+All three marks use standard Unicode quadrant blocks (`▀▄█▛▜` — zero Braille glyphs,
+so they render cleanly in DejaVu Sans Mono and JetBrainsMono Nerd Font) with
+fastfetch palette slots `$1` (chakra orange), `$2` (bijuu crimson), and `$3` (ember gold):
 
-## Files
+- `about.txt` — **Eight Trigrams Seal (Hakke no Fūin Shiki)**: central chakra spiral,
+  gold seal ring, and eight crisp trigram marks.
+- `about-fox.txt` — **Kurama Crest**: stylized Nine-Tails kitsune head with glowing
+  crimson Sharingan eyes and golden forehead seal.
+- `about-leaf.txt` — **Konoha Leaf**: Hidden Leaf emblem with open spiral slit and gold stem.
 
-- `about.txt` — the Eight Trigrams Seal (Hakke no Fūin Shiki): a two-turn
-  central spiral ringed by eight brush-script trigram marks. Quadrant-block
-  art (▀▄█▛▜ etc.; DejaVu Sans Mono has no Braille), 54×26, coloured with
-  fastfetch `$1` (chakra orange spiral), `$2` (crimson marks), `$3` (gold ring).
-- `about-leaf.txt` — the Konoha leaf: stem at the upper right, pointed tip at
-  the lower left, spiral slit opening from the upper-left edge. Same
-  quadrant-block grid and colour codes (`$1` for the leaf).
+`fastfetch/kyuubi-about.jsonc` keeps all native Omarchy modules (`Channel`, `Theme`
+color dots, `OS Age`, `Uptime`, `Update`) while mapping `$1`/`$2`/`$3` to
+`#F26B1D` / `#F04A58` / `#F0B429`.
 
-Because the files use `$1`/`$2`/`$3`, the About sheen animation will not run.
-That is a trade for a three-colour logo. The system About config still tints
-the logo ANSI green unless you also install the optional fastfetch config:
-
-`fastfetch/kyuubi-about.jsonc` maps `$1` to chakra orange (208), `$2` to
-crimson (196), `$3` to gold (220).
-
-## Apply (only if you want it)
+## Apply or Switch Mark
 
 ```sh
 cp ~/.config/omarchy/themes/kyuubi/branding/about.txt ~/.config/omarchy/branding/about.txt
-# optional:
-# mkdir -p ~/.config/fastfetch
-# cp ~/.config/omarchy/themes/kyuubi/fastfetch/kyuubi-about.jsonc ~/.config/fastfetch/config.jsonc
+# or: cp ~/.config/omarchy/themes/kyuubi/branding/about-fox.txt ~/.config/omarchy/branding/about.txt
+# or: cp ~/.config/omarchy/themes/kyuubi/branding/about-leaf.txt ~/.config/omarchy/branding/about.txt
+
+mkdir -p ~/.config/fastfetch
+cp ~/.config/omarchy/themes/kyuubi/fastfetch/kyuubi-about.jsonc ~/.config/fastfetch/config.jsonc
 omarchy-launch-about
 ```
 

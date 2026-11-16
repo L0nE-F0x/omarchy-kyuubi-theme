@@ -1,0 +1,115 @@
+#!/usr/bin/env python3
+"""Launch an optional Kyuubi terminal session without editing user terminal or Starship configs."""
+import argparse
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import tempfile
+import tomllib
+
+ROOT = Path(__file__).resolve().parent.parent
+
+
+def ghostty_options(colors, font_size, ember):
+    options = [
+        "gtk-single-instance=false",
+        "font-family=JetBrainsMono Nerd Font",
+        f"font-size={font_size}",
+        "window-padding-x=18",
+        "window-padding-y=16",
+        "cursor-style=block",
+        "cursor-style-blink=false",
+        "shell-integration-features=no-cursor,ssh-env",
+        "background-opacity=0.90",
+        "custom-shader=",
+        "custom-shader-animation=false",
+        f"env=STARSHIP_CONFIG={ROOT / 'extras/starship.toml'}",
+        f"background={colors['background']}",
+        f"foreground={colors['foreground']}",
+        f"cursor-color={colors['cursor']}",
+        "cursor-text=cell-background",
+        f"selection-background={colors['selection_background']}",
+        "selection-foreground=cell-foreground",
+        f"search-background={colors['yellow']}",
+        f"search-foreground={colors['darker_background']}",
+        f"search-selected-background={colors['accent']}",
+        f"search-selected-foreground={colors['darker_background']}",
+        "split-divider-color=#8C341A",
+        "unfocused-split-opacity=0.86",
+    ]
+    for i in range(16):
+        value = colors["light_foreground"] if i == 7 else colors[f"color{i}"]
+        options.append(f"palette={i}={value}")
+    if ember:
+        options.append(f"custom-shader={ROOT / 'extras/chakra-ember.glsl'}")
+    return options
+
+
+def foot_options(colors, font_size):
+    options = [
+        f"font=JetBrainsMono Nerd Font:size={font_size}",
+        "pad=18x16",
+        "cursor.style=block",
+        "cursor.blink=no",
+        "initial-color-theme=dark",
+        "colors-dark.alpha=0.90",
+        "colors-dark.blur=yes",
+        f"colors-dark.background={colors['background'].lstrip('#')}",
+        f"colors-dark.foreground={colors['foreground'].lstrip('#')}",
+        f"colors-dark.selection-background={colors['selection_background'].lstrip('#')}",
+        f"colors-dark.selection-foreground={colors['selection_foreground'].lstrip('#')}",
+        f"colors-dark.cursor={colors['background'].lstrip('#')} {colors['cursor'].lstrip('#')}",
+    ]
+    for i in range(16):
+        key = f"regular{i}" if i < 8 else f"bright{i - 8}"
+        value = colors["light_foreground"] if i == 7 else colors[f"color{i}"]
+        options.append(f"colors-dark.{key}={value.lstrip('#')}")
+    return options
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--terminal", choices=["ghostty", "foot"], default="ghostty")
+    parser.add_argument("--font-size", type=float, default=11)
+    parser.add_argument("--ember", action="store_true", help="enable the static chakra-ember Ghostty shader")
+    parser.add_argument("--check", action="store_true", help="validate config without opening a window")
+    parser.add_argument("command", nargs=argparse.REMAINDER, help="optional command after --")
+    args = parser.parse_args()
+
+    if not 6 <= args.font_size <= 48:
+        parser.error("font-size must be between 6 and 48")
+    if args.ember and args.terminal != "ghostty":
+        parser.error("--ember requires Ghostty")
+    if not shutil.which(args.terminal):
+        parser.error(f"{args.terminal} is not installed")
+
+    colors = tomllib.loads((ROOT / "colors.toml").read_text())
+    command = args.command[1:] if args.command[:1] == ["--"] else args.command
+    env = os.environ.copy()
+    env["STARSHIP_CONFIG"] = str(ROOT / "extras/starship.toml")
+
+    if args.terminal == "ghostty":
+        options = ghostty_options(colors, args.font_size, args.ember)
+        if args.check:
+            with tempfile.TemporaryDirectory(prefix="kyuubi-check-") as directory:
+                config = Path(directory) / "config"
+                config.write_text("\n".join(options) + "\n")
+                return subprocess.call(["ghostty", "+validate-config", f"--config-file={config}"], env=env)
+        argv = ["ghostty", *(f"--{option}" for option in options)]
+        if command:
+            argv += ["-e", *command]
+    else:
+        argv = ["foot"]
+        for option in foot_options(colors, args.font_size):
+            argv += ["--override", option]
+        if args.check:
+            argv += ["--check-config"]
+        else:
+            argv += ["--", *command]
+
+    os.execvpe(argv[0], argv, env)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

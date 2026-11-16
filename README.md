@@ -2,70 +2,81 @@
 
 Nine tails. Unsealed.
 
-An original dark [Omarchy](https://omarchy.org) theme inspired by Kurama, the
-Nine-Tails, from Naruto. Warm seal-black, Kurama chakra orange, crimson eyes,
-ember gold, and pale cream text.
+An engineered dark [Omarchy](https://omarchy.org) 4.5 theme inspired by Kurama,
+the Nine-Tails: charred seal-black surfaces, Kurama chakra orange (`#F26B1D`),
+bijuu crimson (`#F04A58`), ember gold (`#F0B429`), Konoha sage (`#92B46E`),
+moonlit mist (`#78AEBB`), and warm parchment ink (`#FCE6C8`).
 
-This is unofficial fan-made work. Naruto and Kurama belong to their respective
-rights holders; this theme is not official artwork or an endorsed product.
+![Kyuubi live theme preview](preview.png)
 
-## Palette
+## Palette & Accessibility
 
-| Role | Hex |
-| --- | --- |
-| Seal-black background | `#160C0B` |
-| Chakra orange | `#F26B1D` |
-| Crimson eye | `#C41E3A` |
-| Ember gold | `#F0B429` |
-| Parchment text | `#FFE8C8` |
+Every foreground, muted, and semantic syntax color in [`colors.toml`](colors.toml)
+is tuned for **WCAG AA (>= 4.5:1)** contrast against both the main `#160C0B`
+surface and elevated `#261411` cards.
 
-`colors.toml` is the source of truth. Omarchy generates app configs from it.
-This pack also ships:
+| Role | Hex | Notes |
+| --- | --- | --- |
+| Deeper / Bar Black | `#090505` / `#100807` | Scrims, bar, splits |
+| Seal-Black Canvas | `#160C0B` | Primary terminal & editor background |
+| Elevated Card | `#261411` | Popups, tooltips, cursorline |
+| Blood-Ember Selection | `#521D15` | High-contrast selection wash |
+| Chakra Orange | `#F26B1D` | Primary accent, cursor, functions |
+| Bijuu Crimson | `#F04A58` | Keywords, alerts, active borders |
+| Ember Gold | `#F0B429` | Types, hover highlights, search hits |
+| Parchment Text | `#FCE6C8` | Primary ink (`15.8:1` contrast) |
 
-- a rotating orange → crimson → gold Hyprland border with a soft ember glow
-- a slightly translucent terminal background so the wallpaper can show through
-- btop meters in fire colours
-- Quickshell bar / launcher / menu / notification / lock chrome in the same palette
-- `unlock.png` with a fan-made Eight Trigrams Seal over the standing-fox wallpaper
-- an optional About logo — the Eight Trigrams Seal, or a Konoha leaf — see `branding/`
+## What's Included
 
-On a theme installed from git, Omarchy ignores Lua and terminal configs
-(`hyprland.lua`, `neovim.lua`, `ghostty.conf`, `kitty.conf`, `alacritty.toml`).
-The palette, `shell.toml`, `btop.theme`, icons, and images still apply. Copying
-those Lua and terminal files into a local (non-git) install lets the animated
-border, nvim highlights, and terminal opacity take effect.
+- **Quickshell Chrome (`shell.toml`)**: Translucent seal-black bar (`0.84`),
+  distinct 4-state `[controls]` interaction language (idle parchment/bronze,
+  ember-gold hover, chakra-orange keyboard focus, glowing orange selected),
+  crimson urgent alerts, and a glass fire-seal `[lock]` input.
+- **Hyprland (`hyprland.lua`)**: Seamless 5-stop rotating chakra-orange → crimson →
+  gold `borderangle` loop (`2px`), themed `groupbar` tabs, and a soft warm ember
+  window shadow.
+- **Neovim (`neovim.lua`)**: Tuned `aether.nvim` v3 `on_highlights` with
+  crimson keywords, chakra-orange functions/calls, ember-gold types, sage strings,
+  mist parameters, and custom float/picker/diagnostic borders.
+- **Terminals (`ghostty.conf`, `kitty.conf`, `alacritty.toml`, `foot.ini`)**:
+  Unified 16-color palette (`7` light parchment vs `15` bright bone), chakra-orange
+  cursors, preserved selection foregrounds (`cell-foreground` in Ghostty),
+  gold/orange search highlights, split dividers, and `0.90` translucency.
+- **btop (`btop.theme`)**: Semantic thermal scale — free/idle bars recede into
+  warm ash while active CPU, memory, and downloads heat from umber → orange →
+  bright gold; uploads use cool mist steel; temperature ramps sage → gold → crimson.
+- **Editors & Apps (`obsidian.css`, `helix.toml`, `chromium.theme`, `keyboard.rgb`, `icons.theme`)**:
+  Hand-crafted Kyuubi stylesheets for Obsidian and Helix alongside Omarchy's
+  generated configs (VS Code, Claude Code, Hermes, Pi, T3 Code, Fcitx5).
+  Uses `Yaru-ember` locally (if publishing upstream without local icon assets,
+  use `Yaru-red-dark`).
+- **Plymouth / SDDM Unlock (`unlock.png`, `preview-unlock.png`)**:
+  True transparent-background RGBA Eight Trigrams Seal emblem (`760×438`) sized
+  so Plymouth's password box stays centered cleanly on both 1080p and 1440p screens.
+- **About Branding (`branding/`, `fastfetch/kyuubi-about.jsonc`)**:
+  Three 54×26 quadrant-block marks — Eight Trigrams Seal (`about.txt`), Kurama Crest
+  (`about-fox.txt`), and Konoha Leaf (`about-leaf.txt`) — plus a fixed Fastfetch
+  config preserving all Omarchy hardware, software, color-dot swatch, and age modules.
+- **Optional Operator Terminal (`scripts/kyuubi-terminal`, `extras/`)**:
+  Launch a scoped Ghostty or Foot session with the Kyuubi Starship prompt and
+  optional static `chakra-ember.glsl` shader without modifying global configs:
+
+```sh
+cd ~/.config/omarchy/themes/kyuubi
+./scripts/kyuubi-terminal --ember
+```
 
 ## Wallpaper
 
-Original generated artwork — not an official screenshot or manga panel — at 3840×2160:
+[`backgrounds/01-crimson-chakra.jpg`](backgrounds/01-crimson-chakra.jpg) (`3840×2160`) — preserved untouched.
 
-- **Crimson Chakra** (`backgrounds/01-crimson-chakra.jpg`) — Kyuubi standing with all nine tails behind him and a scarlet bijuu aura.
-
-## About logo (optional)
-
-Omarchy's About screen reads a **user-level** file, not a per-theme one:
-
-`~/.config/omarchy/branding/about.txt`
-
-Nothing in `branding/` is applied automatically. To use the Eight Trigrams
-Seal (Hakke no Fūin Shiki) as the About logo:
+## Validation
 
 ```sh
-cp ~/.config/omarchy/themes/kyuubi/branding/about.txt ~/.config/omarchy/branding/about.txt
-# optional, so $1/$2/$3 map to chakra orange, crimson, and gold:
-# mkdir -p ~/.config/fastfetch
-# cp ~/.config/omarchy/themes/kyuubi/fastfetch/kyuubi-about.jsonc ~/.config/fastfetch/config.jsonc
-omarchy-launch-about
+python3 -m unittest discover -s ~/.config/omarchy/themes/kyuubi/tests -v
 ```
-
-`branding/about-leaf.txt` is the Konoha leaf, if you prefer that instead.
-Restore the default Omarchy mark with `omarchy branding about reset`.
-
-Because the logos use `$1`/`$2`/`$3`, the About sheen animation will not run.
-That is a trade for a three-colour logo.
 
 ## License
 
-Theme files are MIT licensed (see [LICENSE](LICENSE)).
-
-Backgrounds are original generated fan art. Naruto and Kurama remain the property of their rights holders.
+Theme configuration files are MIT licensed (see [LICENSE](LICENSE)).
+Background artwork is unofficial fan art; Naruto and Kurama belong to their respective rights holders.

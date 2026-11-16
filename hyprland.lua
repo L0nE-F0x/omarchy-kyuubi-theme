@@ -1,13 +1,18 @@
--- Kyuubi: chakra-orange → crimson-eye → ember-gold border, slowly rotating.
--- Ember glow on the focused window. A 2px border so the fire gradient can be seen
--- even if the user's looknfeel has zeroed general.border_size.
--- Local / non-git installs only: a theme cloned with .git cannot ship Lua.
+-- Kyuubi Hyprland chrome: seamless chakra-orange -> crimson -> ember-gold
+-- border loop, themed window group bars, and warm Kurama ember aura.
+-- Local / non-git installs only: a theme cloned with .git omits Lua files.
 
 local active_border_color = {
-  colors = { "rgba(f26b1dee)", "rgba(c41e3aee)", "rgba(f0b429ee)", "rgba(f26b1dee)" },
+  colors = {
+    "rgba(f26b1dee)",
+    "rgba(f04a58ee)",
+    "rgba(f0b429ee)",
+    "rgba(f04a58ee)",
+    "rgba(f26b1dee)",
+  },
   angle = 45,
 }
-local inactive_border_color = "rgba(3a2218aa)"
+local inactive_border_color = "rgba(3d2219aa)"
 
 hl.config({
   general = {
@@ -22,16 +27,25 @@ hl.config({
       border_active = active_border_color,
       border_inactive = inactive_border_color,
     },
+    groupbar = {
+      indicator_height = 2,
+      text_color = "rgb(fff4e4)",
+      text_color_inactive = "rgba(e3c19eaa)",
+      col = {
+        active = "rgba(f26b1dcc)",
+        inactive = "rgba(261411aa)",
+      },
+    },
   },
   decoration = {
     shadow = {
       enabled = true,
-      range = 14,
+      range = 18,
       render_power = 3,
-      color = "rgba(f26b1d66)",
-      color_inactive = "rgba(1a0c0880)",
+      color = "rgba(f26b1d55)",
+      color_inactive = "rgba(09050599)",
     },
   },
 })
 
-hl.animation({ leaf = "borderangle", enabled = true, speed = 80, bezier = "linear", style = "loop" })
+hl.animation({ leaf = "borderangle", enabled = true, speed = 65, bezier = "linear", style = "loop" })

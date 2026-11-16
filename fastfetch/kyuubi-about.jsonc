@@ -3,7 +3,11 @@
   "logo": {
     "type": "file",
     "source": "~/.config/omarchy/branding/about.txt",
-    "color": { "1": "#F26B1D", "2": "#C41E3A", "3": "#F0B429" },
+    "color": {
+      "1": "#F26B1D",
+      "2": "#F04A58",
+      "3": "#F0B429"
+    },
     "padding": {
       "top": 2,
       "right": 6,
@@ -18,7 +22,7 @@
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m┌──────────────────────Hardware──────────────────────┐"
+      "format": "\u001b[38;2;163;123;100m┌──────────────────────Hardware──────────────────────┐"
     },
     {
       "type": "host",
@@ -60,73 +64,103 @@
     },
     {
       "type": "custom",
-      "format": "\u001b[90m└────────────────────────────────────────────────────┘"
+      "format": "\u001b[38;2;163;123;100m└────────────────────────────────────────────────────┘"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m┌──────────────────────Software──────────────────────┐"
+      "format": "\u001b[38;2;163;123;100m┌──────────────────────Software──────────────────────┐"
     },
     {
       "type": "command",
       "key": "\ue900 OS",
-      "keyColor": "#C41E3A",
+      "keyColor": "#F04A58",
       "text": "version=$(omarchy-version) && echo \"Omarchy $version\""
     },
     {
       "type": "command",
       "key": "│ ├󰘬",
-      "keyColor": "#C41E3A",
+      "keyColor": "#F04A58",
       "text": "omarchy-version-branch"
+    },
+    {
+      "type": "command",
+      "key": "│ ├󰔫",
+      "keyColor": "#F04A58",
+      "text": "channel=$(omarchy-version-channel); echo \"$channel\""
     },
     {
       "type": "kernel",
       "key": "│ ├",
-      "keyColor": "#C41E3A"
+      "keyColor": "#F04A58"
     },
     {
       "type": "wm",
       "key": "│ ├",
-      "keyColor": "#C41E3A"
+      "keyColor": "#F04A58"
+    },
+    {
+      "type": "de",
+      "key": " DE",
+      "keyColor": "#F04A58"
     },
     {
       "type": "terminal",
       "key": "│ ├",
-      "keyColor": "#C41E3A"
+      "keyColor": "#F04A58"
     },
     {
       "type": "packages",
       "key": "│ ├󰏖",
-      "keyColor": "#C41E3A"
+      "keyColor": "#F04A58"
     },
     {
       "type": "wmtheme",
       "key": "│ ├󰉼",
-      "keyColor": "#C41E3A"
+      "keyColor": "#F04A58"
+    },
+    {
+      "type": "command",
+      "key": "│ ├󰸌",
+      "keyColor": "#F04A58",
+      "text": "theme=$(omarchy-theme-current); echo -e \"$theme \\e[38m●\\e[37m●\\e[36m●\\e[35m●\\e[34m●\\e[33m●\\e[32m●\\e[31m●\""
+    },
+    {
+      "type": "terminalfont",
+      "key": "└ └",
+      "keyColor": "#F04A58"
     },
     {
       "type": "custom",
-      "format": "\u001b[90m└────────────────────────────────────────────────────┘"
+      "format": "\u001b[38;2;163;123;100m└────────────────────────────────────────────────────┘"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m┌──────────────────Age / Uptime / Update─────────────┐"
+      "format": "\u001b[38;2;163;123;100m┌────────────────Age / Uptime / Update───────────────┐"
     },
     {
       "type": "command",
-      "key": "│ ├󰔚",
+      "key": "󱦟 OS Age",
       "keyColor": "#F0B429",
-      "text": "omarchy-show-logo >/dev/null; echo"
+      "text": "days=$(( ($(date +%s) - $(stat -c %W /var/log)) / 86400 )); omarchy-i18n --count \"$days\" about.days \"$days\""
     },
     {
-      "type": "uptime",
-      "key": "│ ├󰔟",
-      "keyColor": "#F0B429"
+      "type": "command",
+      "key": "󱫐 Uptime",
+      "keyColor": "#F0B429",
+      "text": "up=$(cut -d. -f1 /proc/uptime); d=$((up / 86400)); h=$((up % 86400 / 3600)); m=$((up % 3600 / 60)); if [ \"$d\" -gt 0 ]; then omarchy-i18n agents.durationDaysHours \"$d\" \"$h\"; elif [ \"$h\" -gt 0 ]; then omarchy-i18n battery.durationHoursMinutes \"$h\" \"$m\"; else omarchy-i18n battery.durationMinutes \"$m\"; fi"
+    },
+    {
+      "type": "command",
+      "key": " Update",
+      "keyColor": "#F0B429",
+      "text": "updated=$(omarchy-version-pkgs); echo \"$updated\""
     },
     {
       "type": "custom",
-      "format": "\u001b[90m└────────────────────────────────────────────────────┘"
-    }
+      "format": "\u001b[38;2;163;123;100m└────────────────────────────────────────────────────┘"
+    },
+    "break"
   ]
 }

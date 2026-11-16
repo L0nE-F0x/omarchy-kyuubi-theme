@@ -1,0 +1,87 @@
+/* Kyuubi Theme for Obsidian */
+
+.theme-dark, .theme-light {
+  color-scheme: dark;
+
+  /* Layered seal-black surfaces */
+  --background-primary: #160C0B;
+  --background-primary-alt: #1E100E;
+  --background-secondary: #100807;
+  --background-secondary-alt: #090505;
+  --background-modifier-hover: rgba(242, 107, 29, 0.12);
+  --background-modifier-active-hover: rgba(242, 107, 29, 0.20);
+  --background-modifier-border: #3D2219;
+  --background-modifier-border-hover: #CA7642;
+  --background-modifier-border-focus: #F26B1D;
+  --background-modifier-form-field: #100807;
+
+  /* Warm parchment ink */
+  --text-normal: #FCE6C8;
+  --text-muted: #BE9779;
+  --text-faint: #A37B64;
+  --text-on-accent: #090505;
+  --text-selection: rgba(242, 107, 29, 0.30);
+
+  /* Kurama accents */
+  --interactive-normal: #261411;
+  --interactive-hover: #351C16;
+  --interactive-accent: #F26B1D;
+  --interactive-accent-hover: #FF8438;
+  --text-accent: #F26B1D;
+  --text-accent-hover: #FFD46B;
+  --text-link: #7C9BC8;
+
+  /* Headings: chakra orange -> ember gold -> crimson -> moss sage -> mist */
+  --text-title-h1: #F26B1D;
+  --text-title-h2: #F0B429;
+  --text-title-h3: #F04A58;
+  --text-title-h4: #92B46E;
+  --text-title-h5: #78AEBB;
+  --text-title-h6: #DE6B8A;
+
+  /* Code, tags, callouts, diagnostics */
+  --code-background: #100807;
+  --code-normal: #E3C19E;
+  --blockquote-border-color: #F26B1D;
+  --text-error: #FF707C;
+  --text-warning: #F0B429;
+  --text-success: #92B46E;
+
+  --tag-color: #FFD46B;
+  --tag-background: rgba(242, 107, 29, 0.16);
+
+  /* Graph */
+  --graph-line: #5E3528;
+  --graph-node: #F26B1D;
+  --graph-node-focused: #FFD46B;
+  --graph-node-tag: #F04A58;
+  --graph-node-attachment: #92B46E;
+  --graph-node-unresolved: #A37B64;
+}
+
+.cm-header-1, .markdown-rendered h1 { color: var(--text-title-h1); }
+.cm-header-2, .markdown-rendered h2 { color: var(--text-title-h2); }
+.cm-header-3, .markdown-rendered h3 { color: var(--text-title-h3); }
+.cm-header-4, .markdown-rendered h4 { color: var(--text-title-h4); }
+.cm-header-5, .markdown-rendered h5 { color: var(--text-title-h5); }
+.cm-header-6, .markdown-rendered h6 { color: var(--text-title-h6); }
+
+.markdown-rendered code {
+  color: #FFD46B;
+}
+
+.markdown-rendered blockquote {
+  border-left: 3px solid #F26B1D;
+  background-color: rgba(38, 20, 17, 0.55);
+}
+
+.cm-s-obsidian span.cm-keyword { color: #F04A58; }
+.cm-s-obsidian span.cm-def { color: #F26B1D; }
+.cm-s-obsidian span.cm-string { color: #92B46E; }
+.cm-s-obsidian span.cm-number { color: #FFD46B; }
+.cm-s-obsidian span.cm-comment { color: #A37B64; font-style: italic; }
+.cm-s-obsidian span.cm-operator { color: #BE9779; }
+
+.markdown-rendered a {
+  color: var(--text-link);
+}

@@ -1,64 +1,100 @@
-# Kyuubi btop — fire meters: moss → gold → orange → crimson.
+# Kyuubi btop — semantic thermal meters: ash means idle, ember means load.
+#
+# Low/free capacity sits quietly in warm obsidian ash; active load rises from
+# smoldering crimson-umber through Kurama chakra orange into molten ember gold.
+# Upload uses moonlit mist steel so bidirectional traffic stays readable apart.
+# Temperature reserves cool sage -> gold -> bijuu crimson as a genuine warning ramp.
+
 # Main background, empty for terminal default, need to be empty if you want transparent background
 theme[main_bg]="#160C0B"
 
-theme[main_fg]="#FFE8C8"
-theme[title]="#FFF3E0"
-theme[hi_fg]="#F26B1D"
-theme[selected_bg]="#5A1E14"
-theme[selected_fg]="#FFD36A"
-theme[inactive_fg]="#A07A62"
-theme[graph_text]="#E8C9A8"
-theme[meter_bg]="#2A1610"
-theme[proc_misc]="#F0B429"
+# Main text color
+theme[main_fg]="#FCE6C8"
 
+# Title color for boxes
+theme[title]="#FFF4E4"
+
+# Highlight color for keyboard shortcuts
+theme[hi_fg]="#F26B1D"
+
+# Background color of selected item in processes box
+theme[selected_bg]="#521D15"
+
+# Foreground color of selected item in processes box
+theme[selected_fg]="#FFD46B"
+
+# Color of inactive/disabled text
+theme[inactive_fg]="#A37B64"
+
+# Color of text appearing on top of graphs
+theme[graph_text]="#E3C19E"
+
+# Background color of the percentage meters
+theme[meter_bg]="#261411"
+
+# Misc colors for processes box
+theme[proc_misc]="#BE9779"
+
+# Box outlines — cohesive ember hierarchy without rainbow clutter
 theme[cpu_box]="#F26B1D"
 theme[mem_box]="#F0B429"
-theme[net_box]="#C41E3A"
-theme[proc_box]="#A65B32"
-theme[div_line]="#A07A62"
+theme[net_box]="#F04A58"
+theme[proc_box]="#CA7642"
 
-theme[temp_start]="#F0B429"
-theme[temp_mid]="#F26B1D"
-theme[temp_end]="#C41E3A"
+# Box divider line and small boxes line color
+theme[div_line]="#5E3528"
 
-theme[cpu_start]="#F0B429"
+# Temperature graph color: cool sage -> ember gold -> bijuu crimson danger
+theme[temp_start]="#92B46E"
+theme[temp_mid]="#F0B429"
+theme[temp_end]="#F04A58"
+
+# CPU graph colors: smoldering umber -> Kurama orange -> molten gold
+theme[cpu_start]="#9E2A2B"
 theme[cpu_mid]="#F26B1D"
-theme[cpu_end]="#C41E3A"
+theme[cpu_end]="#FFD46B"
 
-theme[free_start]="#A65B32"
-theme[free_mid]="#F0B429"
-theme[free_end]="#FFD36A"
+# Mem/Disk free meter — at rest, recedes into warm ash
+theme[free_start]="#4E382E"
+theme[free_mid]="#785848"
+theme[free_end]="#A37B64"
 
-theme[cached_start]="#F26B1D"
-theme[cached_mid]="#F0B429"
-theme[cached_end]="#FFD36A"
+# Mem/Disk cached meter — warm bronze reserve
+theme[cached_start]="#6B3A22"
+theme[cached_mid]="#A65E34"
+theme[cached_end]="#E08B3C"
 
-theme[available_start]="#F0B429"
-theme[available_mid]="#F26B1D"
-theme[available_end]="#C41E3A"
+# Mem/Disk available meter — muted ash
+theme[available_start]="#4E382E"
+theme[available_mid]="#785848"
+theme[available_end]="#A37B64"
 
-theme[used_start]="#F0B429"
+# Mem/Disk used meter — active memory load heats up
+theme[used_start]="#9E2A2B"
 theme[used_mid]="#F26B1D"
-theme[used_end]="#C41E3A"
+theme[used_end]="#FFD46B"
 
-theme[download_start]="#F0B429"
+# Download graph colors — inbound bursts burn orange to gold
+theme[download_start]="#9E2A2B"
 theme[download_mid]="#F26B1D"
-theme[download_end]="#C41E3A"
+theme[download_end]="#FFD46B"
 
-theme[upload_start]="#A65B32"
-theme[upload_mid]="#F0B429"
-theme[upload_end]="#F26B1D"
+# Upload graph colors — cool moonlit mist steel for crisp up/down separation
+theme[upload_start]="#4D6673"
+theme[upload_mid]="#78AEBB"
+theme[upload_end]="#A4CCD4"
 
-theme[process_start]="#F0B429"
+# Process box color gradient for threads, mem and cpu usage
+theme[process_start]="#9E2A2B"
 theme[process_mid]="#F26B1D"
-theme[process_end]="#C41E3A"
+theme[process_end]="#FFD46B"
 
+# Monotonic luminance ramp for filled graphs: seal-black -> crimson -> orange -> bright gold
 theme[gradient_color_0]="#160C0B"
-theme[gradient_color_1]="#2A1610"
-theme[gradient_color_2]="#5A1E14"
-theme[gradient_color_3]="#A65B32"
-theme[gradient_color_4]="#F26B1D"
-theme[gradient_color_5]="#F0B429"
-theme[gradient_color_6]="#E8C9A8"
-theme[gradient_color_7]="#FFF3E0"
+theme[gradient_color_1]="#2F1311"
+theme[gradient_color_2]="#5E1D1B"
+theme[gradient_color_3]="#9E2A2B"
+theme[gradient_color_4]="#D94D1E"
+theme[gradient_color_5]="#F27A22"
+theme[gradient_color_6]="#F5B83D"
+theme[gradient_color_7]="#FFE084"

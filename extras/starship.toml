@@ -1,0 +1,40 @@
+# Optional Kyuubi Starship prompt (scoped via scripts/kyuubi-terminal).
+
+add_newline = true
+command_timeout = 250
+format = "[$directory$git_branch$git_status$cmd_duration]($style)$character"
+
+[character]
+success_symbol = "[❯](bold #F26B1D)"
+error_symbol = "[✗](bold #F04A58)"
+vimcmd_symbol = "[❮](bold #F0B429)"
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+style = "#E3C19E"
+repo_root_style = "bold #F0B429"
+repo_root_format = "[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
+read_only = " 󰌾"
+read_only_style = "#F04A58"
+
+[git_branch]
+format = "[$branch]($style) "
+style = "italic #92B46E"
+
+[git_status]
+format = "([$all_status$ahead_behind]($style) )"
+style = "#78AEBB"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+conflicted = "[ ](bold #F04A58)"
+untracked = "?${count} "
+modified = "●${count} "
+staged = "[+${count} ](bold #92B46E)"
+deleted = "[-${count} ](bold #F04A58)"
+
+[cmd_duration]
+min_time = 2000
+format = "[$duration]($style) "
+style = "#A37B64"

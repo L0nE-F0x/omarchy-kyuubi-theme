@@ -1,41 +1,65 @@
-# Kyuubi — Nine tails. Unsealed fire.
-# Working copy (v2). Omarchy generates app configs from this palette.
-# Themes may also ship btop.theme, shell.toml, and (for local / non-git
-# installs) hyprland.lua, neovim.lua, and terminal configs; those are
-# not overwritten when present.
+# Kyuubi — Nine tails. Unsealed.
+# Engineered palette: Kurama chakra orange, bijuu crimson, ember gold,
+# charred seal-black, and warm parchment ink. Every foreground and syntax
+# token meets WCAG AA (>= 4.5:1) against both background and elevated cards.
+
 mode = "dark"
 
-# Kurama chakra orange, crimson eye, ember gold, warm seal-black.
+# Core identity
 accent = "#F26B1D"
-selection = "#5A1E14"
-muted = "#A07A62"
+cursor = "#F26B1D"
+selection = "#521D15"
+selection_foreground = "#FFF4E4"
+selection_background = "#521D15"
+muted = "#A37B64"
 
-background = "#160C0B"
+# Seal-black surface hierarchy
+darker_background = "#090505"
 dark_background = "#100807"
-darker_background = "#0A0605"
-lighter_background = "#2A1610"
+background = "#160C0B"
+lighter_background = "#261411"
 
-foreground = "#FFE8C8"
-dark_foreground = "#B8957A"
-light_foreground = "#E8C9A8"
-bright_foreground = "#FFF3E0"
+# Warm parchment typography hierarchy
+foreground = "#FCE6C8"
+dark_foreground = "#BE9779"
+light_foreground = "#E3C19E"
+bright_foreground = "#FFF4E4"
 
-# Animated by hyprland.lua (borderangle loop) on local installs.
-hyprland_active_border = "rgba(f26b1dee) rgba(c41e3aee) rgba(f0b429ee)"
-hyprland_inactive_border = "rgba(3a2218aa)"
+# Hyprland chakra-gradient border (animated in hyprland.lua on local installs)
+hyprland_active_border = "rgba(f26b1dee) rgba(f04a58ee) rgba(f0b429ee)"
+hyprland_inactive_border = "rgba(3d2219aa)"
 
-red = "#C41E3A"
+# Semantic spectrum
+red = "#F04A58"
 yellow = "#F0B429"
 orange = "#F26B1D"
-green = "#8BA86A"
-cyan = "#7A9BA8"
-blue = "#5C6E8A"
-magenta = "#C45C58"
-brown = "#A65B32"
+green = "#92B46E"
+cyan = "#78AEBB"
+blue = "#7C9BC8"
+magenta = "#DE6B8A"
+brown = "#CA7642"
 
-bright_red = "#FF3B4E"
-bright_yellow = "#FFD36A"
-bright_green = "#C4D97A"
-bright_cyan = "#A8C4CC"
-bright_blue = "#8AA0C0"
-bright_magenta = "#E88980"
+bright_red = "#FF707C"
+bright_yellow = "#FFD46B"
+bright_green = "#BCD982"
+bright_cyan = "#A4CCD4"
+bright_blue = "#A0BAE0"
+bright_magenta = "#F08EA8"
+
+# ANSI 0-15 aliases for tools reading numbered slots directly
+color0 = "#160C0B"
+color1 = "#F04A58"
+color2 = "#92B46E"
+color3 = "#F0B429"
+color4 = "#7C9BC8"
+color5 = "#DE6B8A"
+color6 = "#78AEBB"
+color7 = "#FCE6C8"
+color8 = "#A37B64"
+color9 = "#FF707C"
+color10 = "#BCD982"
+color11 = "#FFD46B"
+color12 = "#A0BAE0"
+color13 = "#F08EA8"
+color14 = "#A4CCD4"
+color15 = "#FFF4E4"

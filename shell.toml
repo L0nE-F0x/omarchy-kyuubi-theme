@@ -1,41 +1,51 @@
-# Kyuubi / Omarchy 4 Quickshell surfaces.
-# Warm seal-black chrome, chakra-orange focus, crimson selection, ember-gold hover.
-# Slightly see-through bar/launcher/lock so the fox art can show through.
+# Kyuubi — Omarchy 4.5 Quickshell surfaces & interaction language.
+#
+# Warm seal-black glass lets Kurama bleed softly through chrome while keeping
+# every control state immediately readable:
+#   idle     -> quiet parchment + muted bronze seal border
+#   hover    -> ember gold (#F0B429) highlights the pointer target
+#   focus    -> chakra orange (#F26B1D) marks keyboard focus
+#   selected -> chakra orange fill with warm parchment ink
+#   urgent   -> bijuu crimson (#F04A58) signals alerts, recording, and errors
 
 [bar]
 background = "#100807"
-background-alpha = 0.82
-text = "#FFE8C8"
-active = "#F26B1D"
+background-alpha = 0.84
+text = "#FCE6C8"
+active = "#F04A58"
 scale-with-font = true
 size-horizontal = 26
 size-vertical = 28
 
 [hyprland]
-active-border = "rgba(f26b1dee) rgba(c41e3aee) rgba(f0b429ee) 45deg"
-active-border-foreground = "#FFF3E0"
+active-border = "rgba(f26b1dee) rgba(f04a58ee) rgba(f0b429ee) 45deg"
+active-border-foreground = "rgba(f26b1dee) rgba(f0b429ee) 45deg"
 
 [controls]
-normal-color = "#FFE8C8"
-normal-fill-alpha = 0.05
-normal-border = "#A65B32"
+normal-color = "#FCE6C8"
+normal-fill-alpha = 0.04
+normal-border = "#CA7642"
 normal-border-width = 1
-normal-border-alpha = 0.45
-hover-cursor-color = "#FFF3E0"
-hover-cursor-fill-alpha = 0.10
+normal-border-alpha = 0.34
+
+hover-cursor-color = "#F0B429"
+hover-cursor-fill-alpha = 0.12
 hover-cursor-border = "#F0B429"
 hover-cursor-border-width = 1
-hover-cursor-border-alpha = 0.75
-focus-color = "#FFF3E0"
-focus-fill-alpha = 0.10
+hover-cursor-border-alpha = 0.68
+
+focus-color = "#F26B1D"
+focus-fill-alpha = 0.13
 focus-border = "#F26B1D"
 focus-border-width = 1
-focus-border-alpha = 0.9
-selected-color = "#FFF3E0"
+focus-border-alpha = 0.90
+
+selected-color = "#F26B1D"
 selected-fill-alpha = 0.22
-selected-border = "#C41E3A"
+selected-border = "#F26B1D"
 selected-border-width = 1
-selected-border-alpha = 0.95
+selected-border-alpha = 0.72
+
 pressed-fill-alpha = 0.28
 selection-fill-alpha = 0.40
 
@@ -48,83 +58,69 @@ base-size = 12
 
 [popups]
 background = "#160C0B"
-background-alpha = 0.92
-text = "#FFE8C8"
+background-alpha = 0.94
+text = "#FCE6C8"
 border = "hyprland.active-border"
 border-alpha = 0.95
 
 [tooltip]
-background = "#2A1610"
+background = "#261411"
 background-alpha = 0.96
-text = "#FFE8C8"
+text = "#FFF4E4"
 border = "#F0B429"
-border-alpha = 0.9
+border-alpha = 0.88
 
 [notifications]
 background = "#160C0B"
-background-alpha = 0.92
-text = "#FFE8C8"
+background-alpha = 0.94
+text = "#FCE6C8"
 border = "hyprland.active-border"
 border-alpha = 0.95
-countdown = "#C41E3A"
-
-[launcher]
-background = "#160C0B"
-background-alpha = 0.88
-text = "#FFE8C8"
-border = "hyprland.active-border"
-border-alpha = 0.9
-scrim = "#0A0605"
-scrim-alpha = 0.5
-selected-background = "#5A1E14"
-selected-background-alpha = 1.0
-selected-text = "#FFF3E0"
-selected-border = "#F26B1D"
-selected-border-alpha = 0.95
+countdown = "#F26B1D"
 
 [menu]
 background = "#160C0B"
-background-alpha = 0.90
-text = "#FFE8C8"
+background-alpha = 0.93
+text = "#FCE6C8"
 border = "hyprland.active-border"
-border-alpha = 0.9
-scrim = "#0A0605"
-scrim-alpha = 0.45
-selected-background = "#5A1E14"
-selected-background-alpha = 1.0
-selected-text = "#FFF3E0"
-selected-border = "#F26B1D"
-selected-border-alpha = 0.95
+border-alpha = 0.92
+scrim = "#090505"
+scrim-alpha = 0.58
+selected-background = "#F26B1D"
+selected-background-alpha = 0.18
+selected-text = "#FFF4E4"
+selected-border = "hyprland.active-border-foreground"
+selected-border-alpha = 0.58
 
 [polkit]
 background = "#160C0B"
-background-alpha = 0.94
-text = "#FFE8C8"
-text-error = "#FF3B4E"
+background-alpha = 0.95
+text = "#FCE6C8"
+text-error = "#FF707C"
 border = "hyprland.active-border"
-border-error = "#C41E3A"
+border-error = "#F04A58"
 border-alpha = 1.0
-scrim = "#0A0605"
-scrim-alpha = 0.55
+scrim = "#090505"
+scrim-alpha = 0.62
 accent = "#F26B1D"
 
 [lock]
-# Centered password field reads as a fire-seal tablet on the blurred wallpaper.
+# Fire-seal tablet floating over the blurred Kurama wallpaper.
 background = "#100807"
-background-alpha = 0.78
-text = "#FFE8C8"
-placeholder = "#A07A62"
-text-error = "#FF3B4E"
-border = "#A65B32"
+background-alpha = 0.72
+text = "#FFF4E4"
+placeholder = "#BE9779"
+text-error = "#FF707C"
+border = "#CA7642"
 border-active = "hyprland.active-border"
-border-error = "#C41E3A"
+border-error = "#F04A58"
 border-alpha = 1.0
 selection = "#F26B1D"
-selection-alpha = 0.5
+selection-alpha = 0.45
 
 [image-picker]
-text = "#FFE8C8"
+text = "#FCE6C8"
 selected-border = "#F26B1D"
 selected-border-alpha = 1.0
-unselected-border = "#A07A62"
-unselected-border-alpha = 0.28
+unselected-border = "#A37B64"
+unselected-border-alpha = 0.30

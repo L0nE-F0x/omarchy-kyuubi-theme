@@ -1,0 +1,91 @@
+# Kyuubi Helix — matches Neovim's Kurama syntax lanes.
+# Keywords in crimson, functions in chakra orange, types in ember gold, strings in sage.
+
+"keyword" = { fg = "color1", modifiers = ["bold", "italic"] }
+"keyword.control" = { fg = "color1", modifiers = ["bold", "italic"] }
+"keyword.return" = { fg = "color9", modifiers = ["bold", "italic"] }
+"keyword.import" = { fg = "color5", modifiers = ["bold"] }
+"function" = { fg = "#F26B1D", modifiers = ["bold"] }
+"function.builtin" = { fg = "color11", modifiers = ["bold"] }
+"function.macro" = { fg = "color5" }
+"type" = { fg = "color3", modifiers = ["bold"] }
+"type.builtin" = "color11"
+"type.enum.variant" = "color11"
+"constructor" = { fg = "color3", modifiers = ["bold"] }
+"constant" = "color11"
+"constant.builtin" = { fg = "color13", modifiers = ["bold"] }
+"constant.numeric" = "color11"
+"constant.character" = "color2"
+"constant.character.escape" = { fg = "color11", modifiers = ["bold"] }
+"string" = "color2"
+"string.regexp" = "color14"
+"string.special" = "color6"
+"comment" = { fg = "color8", modifiers = ["italic"] }
+"variable" = "foreground"
+"variable.parameter" = { fg = "color6", modifiers = ["italic"] }
+"variable.builtin" = { fg = "color5", modifiers = ["italic"] }
+"variable.other.member" = "light_foreground"
+"label" = "color3"
+"punctuation" = "color8"
+"punctuation.special" = "color6"
+"operator" = "dark_foreground"
+"tag" = "color1"
+"namespace" = { fg = "color4", modifiers = ["italic"] }
+"special" = "color11"
+"attribute" = "color3"
+
+# Markup
+"markup.heading.1" = { fg = "#F26B1D", modifiers = ["bold"] }
+"markup.heading.2" = { fg = "color3", modifiers = ["bold"] }
+"markup.heading.3" = { fg = "color1", modifiers = ["bold"] }
+"markup.heading.4" = "color2"
+"markup.heading.5" = "color4"
+"markup.heading.6" = "color5"
+"markup.list" = "color3"
+"markup.list.unchecked" = "color8"
+"markup.list.checked" = "color2"
+"markup.bold" = { fg = "bright_foreground", modifiers = ["bold"] }
+"markup.italic" = { fg = "light_foreground", modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "color4", modifiers = ["italic", "underlined"] }
+"markup.link.text" = "color6"
+"markup.link.label" = "color3"
+"markup.raw" = "color2"
+"markup.quote" = "color8"
+
+# Diff
+"diff.plus" = "color2"
+"diff.minus" = "color1"
+"diff.delta" = "color3"
+
+# UI
+"ui.background" = { }
+"ui.cursor" = { fg = "darker_background", bg = "#F26B1D" }
+"ui.cursor.match" = { fg = "color11", bg = "#4A1E14", modifiers = ["bold", "underlined"] }
+"ui.cursorline.primary" = { bg = "#22110E" }
+"ui.selection" = { bg = "selection" }
+
+"ui.linenr" = { fg = "#7A5A48" }
+"ui.linenr.selected" = { fg = "#F26B1D", modifiers = ["bold"] }
+
+"ui.statusline" = { fg = "foreground", bg = "dark_background" }
+"ui.statusline.inactive" = { fg = "color8", bg = "darker_background" }
+"ui.statusline.normal" = { fg = "darker_background", bg = "color3", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "darker_background", bg = "color2", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "darker_background", bg = "color13", modifiers = ["bold"] }
+
+"ui.popup" = { fg = "foreground", bg = "dark_background" }
+"ui.window" = { fg = "#4E2319" }
+"ui.help" = { fg = "foreground", bg = "dark_background" }
+
+"ui.bufferline" = { fg = "color8", bg = "darker_background" }
+"ui.bufferline.active" = { fg = "bright_foreground", bg = "background", underline = { color = "#F26B1D", style = "line" } }
+
+"ui.text" = "foreground"
+"ui.text.focus" = { fg = "bright_foreground", bg = "selection", modifiers = ["bold"] }
+"ui.text.inactive" = { fg = "color8" }
+
+"warning" = "color3"
+"error" = "color9"
+"info" = "color4"
+"hint" = "color6"
